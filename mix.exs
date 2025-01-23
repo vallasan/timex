@@ -1,13 +1,13 @@
 defmodule Timex.Mixfile do
   use Mix.Project
 
-  @version "3.7.11"
+  @version "3.7.11-fork"
 
   def project do
     [
       app: :timex,
       version: @version,
-      elixir: "~> 1.11",
+      elixir: "~> 1.18",
       description: description(),
       package: package(),
       deps: deps(),
@@ -55,7 +55,7 @@ defmodule Timex.Mixfile do
 
   def deps do
     [
-      {:tzdata, "~> 1.1"},
+      {:tzdata, git: "https://github.com/vallasan/tzdata.git"},
       {:combine, "~> 0.10"},
       {:gettext, "~> 0.26"},
       {:ex_doc, "~> 0.13", only: [:docs]},
